@@ -31,10 +31,14 @@ const userSchema = new Schema({
   password: {
     type: String,
     required: true
+  },
+  referral_remaining: {
+    type: Number,
+    default: 3
   }
 });
 
-// Create a model from the schema
+
 const Users = mongoose.model('User', userSchema);
 
 module.exports = Users;
