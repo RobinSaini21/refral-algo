@@ -57,3 +57,5 @@ const calulateBouns = (remaingRerral = 3) => {
 console.log(calulateBouns(3));
 console.log(calulateBouns(2));
 console.log(calulateBouns(1));
+
+module.exports = calulateBouns;
