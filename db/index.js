@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const dbUrl = "mongodb+srv://robinsaini2126:MLcB98hSZmTIQTWS@cluster0.x83bzir.mongodb.net/test?retryWrites=true&w=majority";
+const dbUrl = "mongodb+srv://robinsaini2126:MLcB98hSZmTIQTWS@cluster0.x83bzir.mongodb.net/referrals?retryWrites=true&w=majority";
 //MLcB98hSZmTIQTWS
 
 

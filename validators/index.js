@@ -3,9 +3,13 @@ const Joi = require("joi");
 
 const registerValidation = (body) => {
     const validate = Joi.object({
-        name: Joi.string().max(100).min(4).required(),
-        email: Joi.string().max(200).min(6).email().required(),
-        password: Joi.string().max(30).min(4).required()
+        username: Joi.string().required(),
+        email: Joi.string().email().required(),
+        referralBonus: Joi.number().default(10),
+        referral_code: Joi.string().required(),
+        parent_user: Joi.string().allow(null).optional(),
+        children_user: Joi.array().items(Joi.string()).default([]),
+        password: Joi.string().required()
     })
 
     return validate.validate(body)
