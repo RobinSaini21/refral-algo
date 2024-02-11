@@ -24,7 +24,8 @@
     "mongodb": "^6.3.0",
     "mongoose": "^8.1.1",
     "morgan": "~1.9.1",
-    "referral-codes": "^3.0.0"
+    "referral-codes": "^3.0.0",
+    "uglify-js": "^3.17.4"
   },
   "devDependencies": {
     "nodemon": "^3.0.3"
