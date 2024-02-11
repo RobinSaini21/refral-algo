@@ -1,5 +1,4 @@
 const { Users } = require("./../schemas");
-const { ObjectId } = require("mongodb");
 const { registerValidation } = require("../validators");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");

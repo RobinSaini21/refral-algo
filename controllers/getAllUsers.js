@@ -1,8 +1,16 @@
-const { Users } = require("./../schemas")
+const { Users } = require("./../schemas");
 
-module.exports = async function loginController(req , res) {
-    const users = await Users.find({}, {password: 0});
-    return res.json(users);
-}
-
-
+module.exports = async function getAllUsers(req, res) {
+  try {
+    const user = req.user;
+    const foundUser = await Users.findOne({ email: user.email });
+    if (foundUser) {
+      const users = await Users.find({}, { password: 0 });
+      return res.json(users);
+    } else {
+      return res.status(409).json({ message: "Invalid Request" });
+    }
+  } catch (error) {
+    return res.status(500).send({ message: "Internal server error" });
+  }
+};

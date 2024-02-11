@@ -16,6 +16,17 @@ const registerValidation = (body) => {
 }
 
 
+const loginValidation = (body) => {
+    const validate = Joi.object({
+        email: Joi.string().email().required(),
+        referral_code: Joi.string().optional(),
+        password: Joi.string().required()
+    })
+
+    return validate.validate(body)
+}
+
 module.exports = {
-    registerValidation
+    registerValidation ,
+    loginValidation
 }
