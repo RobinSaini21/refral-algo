@@ -4,7 +4,7 @@ module.exports = async function getAllUsers(req, res) {
   try {
     const user = req.user;
     const foundUser = await Users.findOne({ email: user.email });
-    if (foundUser) {
+    if (foundUser && foundUser.is_admin) {
       const users = await Users.find({}, { password: 0 });
       return res.json(users);
     } else {

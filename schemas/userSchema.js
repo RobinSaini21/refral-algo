@@ -35,6 +35,10 @@ const userSchema = new Schema({
   referral_remaining: {
     type: Number,
     default: 3
+  },
+  is_admin: {
+    type: Boolean,
+    default: false
   }
 });
 

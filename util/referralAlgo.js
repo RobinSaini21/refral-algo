@@ -3,6 +3,8 @@ const HOLIDAYS = ["Thu Aug 15 2024"];
 
 const getDay = () => {
   const day = new Date().toDateString();
+  //const day = "Thu Aug 15 2024";
+  //const day = "Mon Feb 12 2024"
 
   if (isHoliday(day)) {
     return "Holiday";
