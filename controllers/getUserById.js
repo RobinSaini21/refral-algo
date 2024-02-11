@@ -11,7 +11,12 @@ module.exports = async function getUserById(req, res) {
     const foundUser = await Users.findOne({ email: user.email });
     if (foundUser && foundUser.is_admin) {
       const users = await Users.findById({_id: id}, { password: 0 });
-      return res.json(users);
+      if(users){
+        return res.json(users);
+      } else {
+        return res.status(409).json({ message: "User not found" });
+      }
+    
     } else {
       return res.status(409).json({ message: "Invalid Request" });
     }
