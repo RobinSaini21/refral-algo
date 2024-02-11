@@ -5,7 +5,7 @@ const { authMiddleware } = require("./../middleware");
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  return res.status(200).json({ message: "Hello World" });
 });
 
 router.post("/login", loginController);
